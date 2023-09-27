@@ -1,0 +1,19 @@
+Q: California sales tax laws have changed and we need to alert our customers to this through email.
+What are the emails of the customer who live in california. 
+
+SELECT email,district
+from customer c 
+join address a 
+on a.address_id=c.address_id
+WHERE district = 'California';
+
+Q: A Customer walks in and is a huge fan of the actor "Nick Wahlberg" and wants to know which movie he is in. Get a list of 
+all the movies, "NIck Wahlberg" has been in.
+
+SELECT title,first_name,last_name
+from film f
+join film_actor fa
+on fa.film_id = f.film_id
+join actor a 
+on a.actor_id=fa.actor_id
+WHERE first_name ='Nick' AND last_name = 'Wahlberg';
